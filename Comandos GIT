@@ -1,0 +1,126 @@
+
+definir o nome da pessoa que executa commits no repositório local atual
+git config --local user.name "Seu nome aqui"
+git config --local user.email "seu@email.aqui"
+
+para marcar o arquivo para ser salvo (commitado)
+git add index.html
+
+confira o estado e está pronto para ser salvo (commitado)
+git status
+
+para alterar a mensagem de commit, se desejar
+git commit -m "Criando arquivo index.html na lista"
+
+Analise o log de saída
+git log
+Em uma linmha
+git log --oneline  
+git log -p
+git log --pretty="parametros de formatação"
+
+Ignorar o commit de um arquivo, Crie o arquivo .gitignore
+git commit -m "Adicionando .gitignore"
+
+para definir um repositório
+git init --bare
+
+enviar as alterações para o repositório remoto
+git push [repositorio] master
+
+para baixar as modificações
+git pull local main
+
+Como adicionar links para os repositórios remotos
+git remote add local {caminho}
+
+Como enviar as nossas alterações para um repositório remoto
+git clone {caminho} projeto
+
+Como podemos fazer o merge da branch titulo para a branch master
+git checkout master 
+git merge titulo
+
+corrigir o conflito
+git rebase titulo
+
+veja que apenas a branch master existe no seu repositório
+git branch
+
+criar nova branch
+git branch nome_branch
+
+Para selecionar a nova branch
+git checkout nome_branch
+
+para voltar à linha de desenvolvimento master
+git checkout master
+
+para trazer o trabalho de outras branches
+git branch_destino branch_origem
+
+para ver as linhas de desenvolvimento (branches)
+git log --graph
+
+gerar um novo commit, informando que houve uma mescla entre duas branches
+git merge
+
+desfazem alterações antes de adicioná-las
+git checkout
+depois de adicioná-las
+git reset
+após realizar o commit 
+git revert
+
+Quando precisamos pausar o desenvolvimento de alguma funcionalidade, ou correção, antes de finalizar.
+git stash
+
+Para deixar o nosso código em determinado estado
+git checkout
+
+substituindo {hash}
+git checkout {hash}
+
+git diff {hash do commit de merge com lista}..{hash do último commit realizado}
+
+exibe as mudanças no código
+git diff
++ linha adicionada
+- linha removida
+- linha modificada (versão antiga)
++ linha modificada (nova versão)
+
+gera o envio de uma tag para o GitHub
+git Release
+
+git tag -a v0.1.0 de versão 
+git tag -a v0.1.0
+
+Que o Git pode nos ajudar a desfazer alterações que não vamos utilizar;
+  Que, para desfazer uma alteração antes de adicioná-la para commit (com git add), podemos utilizar o comando git checkout -- <arquivos>;
+  Que, para desfazer uma alteração após adicioná-la para commit, antes precisamos executar o git reset HEAD <arquivos> e depois podemos desfazê-las com git checkout -- <arquivos>;
+  Que, para revertermos as alterações realizadas em um commit, o comando git revert pode ser a solução;
+  Que o comando git revert gera um novo commit informando que alterações foram desfeitas;
+  Que, para guardar um trabalho para retomá-lo posteriormente, podemos utilizar o git stash;
+  Que, para visualizar quais alterações estão na stash, podemos utilizar o comando git stash list;
+  Que, com o comando git stash apply <numero>, podemos aplicar uma alteração específica da stash;
+  Que o comando git stash drop <numero> remove determinado item da stash;
+  Que o comando git stash pop aplica e remove a última alteração que foi adicionada na stash;
+  Que o git checkout serve para deixar a cópia do código da nossa aplicação no estado que desejarmos:
+        git checkout <branch> deixa o código no estado de uma branch com o nome <branch>;
+        git checkout <hash> deixa o código no estado do commit com o hash <hash>.
+
+  Que é possível visualizar quais alterações foram realizadas em cada arquivo, com o comando git diff;
+    Que, digitando apenas git diff, vemos as alterações em nossos arquivos que não foram adicionadas para commit (com git add);
+    Que é possível comparar as alterações entre duas branches com git diff <branch1>..<branch2>
+    Que é possível comparar as alterações feitas entre um commit e outro, através do comando git diff <commit1>..<commit2>;
+    Que o Git nos possibilita salvar marcos da nossa aplicação, como por exemplo, lançamento de versões, através do git tag;
+    Que o comando git tag -a é utilizado para gerar uma nova tag;
+    As Releases do GitHub, que são geradas para cada tag do Git criada em nosso repositório.
+
+
+
+
+
+
+
